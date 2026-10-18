@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Indrasis Chakraborty — scientific machine learning, physics, and AI research at Lawrence Livermore National Laboratory.">
 <title>Indrasis Chakraborty — AI & Scientific Discovery</title>
+
 <style>
 :root {
   --paper: #f7f6f2;
@@ -14,7 +16,9 @@
   --mint: #dcebe2;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -25,11 +29,19 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
-a { color: inherit; text-decoration: none; }
-button { font: inherit; cursor: pointer; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
 
 button:focus-visible,
 a:focus-visible {
@@ -43,6 +55,8 @@ a:focus-visible {
   padding: 0 40px;
 }
 
+/* Navigation */
+
 header {
   position: sticky;
   top: 0;
@@ -53,7 +67,7 @@ header {
 }
 
 nav {
-  height: 80px;
+  min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,7 +80,9 @@ nav {
   letter-spacing: -.6px;
 }
 
-.brand span { color: var(--accent); }
+.brand span {
+  color: var(--accent);
+}
 
 .navlinks {
   display: flex;
@@ -76,7 +92,9 @@ nav {
   font-weight: 600;
 }
 
-.navlinks a:hover { color: var(--accent); }
+.navlinks a:hover {
+  color: var(--accent);
+}
 
 .navcontact {
   border: 1px solid #b7c5bd;
@@ -84,12 +102,19 @@ nav {
   padding: 9px 19px;
 }
 
+/* Hero */
+
 .hero {
   padding: 95px 0 88px;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 65px;
   align-items: center;
+}
+
+.hero > *,
+.about > * {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -108,9 +133,15 @@ nav {
   height: 7px;
   background: var(--accent);
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
-h1, h2, h3, p { margin-top: 0; }
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
 
 h1 {
   font: clamp(48px, 5.2vw, 74px)/1.07 Georgia, serif;
@@ -118,7 +149,10 @@ h1 {
   margin: 24px 0;
 }
 
-h1 em { color: var(--accent); font-weight: 400; }
+h1 em {
+  color: var(--accent);
+  font-weight: 400;
+}
 
 .intro {
   max-width: 495px;
@@ -143,6 +177,7 @@ h1 em { color: var(--accent); font-weight: 400; }
   display: inline-flex;
   gap: 24px;
   align-items: center;
+  transition: transform .2s, background .2s;
 }
 
 .primary {
@@ -151,7 +186,9 @@ h1 em { color: var(--accent); font-weight: 400; }
   color: white;
 }
 
-.button:hover { transform: translateY(-2px); }
+.button:hover {
+  transform: translateY(-2px);
+}
 
 .affiliation {
   margin-top: 38px;
@@ -167,7 +204,10 @@ h1 em { color: var(--accent); font-weight: 400; }
   width: 27px;
   height: 1px;
   background: var(--accent);
+  flex-shrink: 0;
 }
+
+/* Scientific illustration */
 
 .art {
   background: #e9eee7;
@@ -181,14 +221,17 @@ h1 em { color: var(--accent); font-weight: 400; }
   justify-content: center;
 }
 
-.art svg { width: 100%; height: 100%; }
+.art svg {
+  width: 100%;
+  height: 100%;
+}
 
 .art-label {
   position: absolute;
   top: 23px;
   left: 24px;
   right: 24px;
-  font: 10px monospace;
+  font: 10px/1.6 monospace;
   letter-spacing: 1px;
   color: #527466;
 }
@@ -200,6 +243,7 @@ h1 em { color: var(--accent); font-weight: 400; }
   right: 24px;
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   color: #527466;
   font: 10px monospace;
 }
@@ -215,6 +259,8 @@ h1 em { color: var(--accent); font-weight: 400; }
   font-size: 10px;
   letter-spacing: 1px;
 }
+
+/* Research */
 
 .strip {
   border-top: 1px solid var(--line);
@@ -235,7 +281,9 @@ h1 em { color: var(--accent); font-weight: 400; }
   margin-right: 12px;
 }
 
-section { padding: 83px 0; }
+section {
+  padding: 83px 0;
+}
 
 .sectionhead {
   display: flex;
@@ -282,7 +330,7 @@ h2 {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -295,7 +343,9 @@ h2 {
   flex-direction: column;
 }
 
-.card[hidden] { display: none; }
+.card[hidden] {
+  display: none;
+}
 
 .card-visual {
   height: 148px;
@@ -307,7 +357,10 @@ h2 {
   justify-content: center;
 }
 
-.card-visual svg { width: 100%; height: 100%; }
+.card-visual svg {
+  width: 100%;
+  height: 100%;
+}
 
 .project-number {
   position: absolute;
@@ -370,7 +423,17 @@ h3 {
   font-weight: 650;
 }
 
-.details:hover { text-decoration: underline; }
+.details:hover {
+  text-decoration: underline;
+}
+
+#count {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 18px 0 0;
+}
+
+/* About and education */
 
 .about {
   display: grid;
@@ -379,8 +442,15 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
-.about p { font-size: 16px; color: var(--muted); }
-.about strong { color: var(--ink); font-weight: 600; }
+.about p {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.about strong {
+  color: var(--ink);
+  font-weight: 600;
+}
 
 .expertise {
   margin: 25px 0 32px;
@@ -420,6 +490,8 @@ h3 {
   margin-top: 3px;
 }
 
+/* Contact banner */
+
 .contact {
   background: var(--ink);
   border-radius: 8px;
@@ -432,7 +504,9 @@ h3 {
   margin-bottom: 65px;
 }
 
-.contact .eyebrow { color: #a7d9c4; }
+.contact .eyebrow {
+  color: #a7d9c4;
+}
 
 .contact h2 {
   font-size: 39px;
@@ -453,6 +527,130 @@ h3 {
   border: 0;
 }
 
+/* Dialogs */
+
+dialog {
+  width: min(580px, 90vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 36px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 25px 80px #182d3626;
+}
+
+dialog::backdrop {
+  background: #132d35a8;
+  backdrop-filter: blur(4px);
+}
+
+.dialog-heading {
+  padding-right: 45px;
+}
+
+dialog h2 {
+  font-size: 32px;
+  margin: 15px 0 20px;
+}
+
+dialog p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.close {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.close:hover {
+  background: var(--mint);
+}
+
+.dialogtags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.dialogtags span {
+  font-size: 11px;
+  background: var(--mint);
+  padding: 5px 9px;
+  border-radius: 3px;
+}
+
+/* Contact details */
+
+.contact-description {
+  margin-bottom: 24px;
+}
+
+.contact-list {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff70;
+  transition: background .2s, border-color .2s;
+}
+
+.contact-item:hover {
+  background: var(--mint);
+  border-color: var(--accent);
+}
+
+.contact-item > span:first-child {
+  min-width: 0;
+}
+
+.contact-item-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contact-item-value {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.contact-item-arrow {
+  color: var(--accent);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Footer */
+
 footer {
   border-top: 1px solid var(--line);
   padding: 25px 0;
@@ -463,95 +661,155 @@ footer {
   color: var(--muted);
 }
 
-dialog {
-  width: min(580px, 90vw);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 36px;
-  background: var(--paper);
-  color: var(--ink);
-  max-height: 85vh;
-}
-
-dialog::backdrop {
-  background: #132d35a8;
-  backdrop-filter: blur(4px);
-}
-
-dialog h2 { font-size: 30px; margin: 15px 0 20px; }
-dialog p { color: var(--muted); font-size: 14px; }
-
-.close {
-  float: right;
-  background: none;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 20px;
-}
-
-.dialogtags { display: flex; gap: 7px; flex-wrap: wrap; }
-
-.dialogtags span {
-  font-size: 11px;
-  background: var(--mint);
-  padding: 5px 9px;
-  border-radius: 3px;
-}
-
-#count {
-  font-size: 11px;
-  color: var(--muted);
-  margin: 18px 0 0;
-}
+/* Responsive layouts */
 
 @media (max-width: 900px) {
-  .hero { gap: 30px; }
-  .projects { grid-template-columns: repeat(2, 1fr); }
-  .about { gap: 45px; }
-  .strip { flex-wrap: wrap; font-size: 10px; }
-  .contact { padding: 35px; }
-  h1 { font-size: 56px; }
+  .hero {
+    gap: 30px;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about {
+    gap: 45px;
+  }
+
+  .strip {
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+
+  .contact {
+    padding: 35px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
 }
 
 @media (max-width: 620px) {
-  .wrap { padding: 0 22px; }
-  nav { height: 68px; }
-  .brand { font-size: 15px; }
-  .navlinks { gap: 17px; font-size: 11px; }
-  .navcontact { display: none; }
+  .wrap {
+    padding: 0 22px;
+  }
+
+  nav {
+    min-height: 68px;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 15px;
+  }
+
+  .navlinks {
+    gap: 17px;
+    font-size: 11px;
+  }
+
+  .navcontact {
+    display: none;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding: 54px 0 42px;
     gap: 35px;
   }
-  h1 { font-size: 53px; }
-  .art { aspect-ratio: 1.4; }
-  .strip { justify-content: flex-start; gap: 15px 25px; }
-  .projects { grid-template-columns: 1fr; }
-  .sectionhead { display: block; }
-  .sectionnote { margin-top: 20px; }
-  section { padding: 55px 0; }
-  h2 { font-size: 36px; }
-  .about { grid-template-columns: 1fr; gap: 25px; }
+
+  h1 {
+    font-size: clamp(42px, 10vw, 53px);
+  }
+
+  .art {
+    aspect-ratio: 1.4;
+  }
+
+  .strip {
+    justify-content: flex-start;
+    gap: 15px 25px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionhead {
+    display: block;
+  }
+
+  .sectionnote {
+    margin-top: 20px;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
   .contact {
     display: block;
     padding: 30px 25px;
     margin-bottom: 40px;
   }
-  .contact h2 { font-size: 34px; }
-  .contact .button { margin-top: 25px; }
-  footer { flex-direction: column; gap: 7px; }
-  .card-visual { height: 160px; }
+
+  .contact h2 {
+    font-size: 34px;
+  }
+
+  .contact .button {
+    margin-top: 25px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .card-visual {
+    height: 160px;
+  }
+
+  dialog {
+    padding: 28px 22px;
+  }
+
+  dialog h2 {
+    font-size: 29px;
+  }
+
+  .contact-item {
+    padding: 14px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .button:hover { transform: none; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button,
+  .contact-item {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -560,16 +818,20 @@ dialog p { color: var(--muted); font-size: 14px; }
       <a href="#" class="brand">
         Indrasis Chakraborty<span>.</span>
       </a>
+
       <div class="navlinks">
         <a href="#research">Research</a>
         <a href="#about">About</a>
-        <a href="#contact" class="navcontact">Let’s connect ↗</a>
+        <a href="#contact" class="navcontact">
+          Let’s connect ↗
+        </a>
       </div>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
+
   <div class="hero">
     <div>
       <div class="eyebrow">
@@ -591,10 +853,11 @@ dialog p { color: var(--muted); font-size: 14px; }
 
       <div class="actions">
         <a class="button primary" href="#research">
-          Explore my research <span>↗</span>
+          Explore my research <span aria-hidden="true">↗</span>
         </a>
+
         <a class="button" href="#about">
-          About me <span>↓</span>
+          About me <span aria-hidden="true">↓</span>
         </a>
       </div>
 
@@ -605,6 +868,7 @@ dialog p { color: var(--muted); font-size: 14px; }
 
     <div class="art" role="img"
          aria-label="Abstract scientific illustration of particles and connected learned representations">
+
       <div class="art-label">
         EXPLORING THE SPACE BETWEEN DATA & DISCOVERY
       </div>
@@ -616,14 +880,18 @@ dialog p { color: var(--muted); font-size: 14px; }
             <circle cx="1" cy="1" r=".8"
                     fill="#a7bca7" opacity=".55"/>
           </pattern>
+
           <radialGradient id="glow">
             <stop stop-color="#c7ddbd"/>
-            <stop offset="1" stop-color="#e9eee7" stop-opacity="0"/>
+            <stop offset="1" stop-color="#e9eee7"
+                  stop-opacity="0"/>
           </radialGradient>
         </defs>
 
         <rect width="450" height="470" fill="url(#grid)"/>
-        <circle cx="230" cy="228" r="190" fill="url(#glow)"/>
+
+        <circle cx="230" cy="228" r="190"
+                fill="url(#glow)"/>
 
         <g fill="none" stroke="#8eaa90"
            stroke-width=".8" opacity=".8">
@@ -663,7 +931,8 @@ dialog p { color: var(--muted); font-size: 14px; }
 
         <circle cx="230" cy="230" r="22"
                 fill="#c5ddc2" stroke="#97b899"/>
-        <circle cx="230" cy="230" r="9" fill="#216e5d"/>
+        <circle cx="230" cy="230" r="9"
+                fill="#216e5d"/>
 
         <g fill="#94ac7e">
           <circle cx="93" cy="298" r="4"/>
@@ -673,7 +942,9 @@ dialog p { color: var(--muted); font-size: 14px; }
         </g>
       </svg>
 
-      <div class="art-tag">PHYSICS × MACHINE LEARNING</div>
+      <div class="art-tag">
+        PHYSICS × MACHINE LEARNING
+      </div>
 
       <div class="art-bottom">
         <span>SCIENTIFIC REPRESENTATIONS</span>
@@ -694,9 +965,10 @@ dialog p { color: var(--muted); font-size: 14px; }
         <div class="eyebrow">Research & applications</div>
         <h2>Questions that drive my work.</h2>
       </div>
+
       <p class="sectionnote">
-        From particle detectors to energy systems, using AI to
-        reveal useful structure in complex data.
+        From particle detectors to energy systems, using AI
+        to reveal useful structure in complex data.
       </p>
     </div>
 
@@ -706,14 +978,17 @@ dialog p { color: var(--muted); font-size: 14px; }
               data-filter="all" aria-pressed="true">
         All research
       </button>
+
       <button class="filter"
               data-filter="physics" aria-pressed="false">
         Physics
       </button>
+
       <button class="filter"
               data-filter="methods" aria-pressed="false">
         AI methods
       </button>
+
       <button class="filter"
               data-filter="applications" aria-pressed="false">
         Applications
@@ -721,13 +996,25 @@ dialog p { color: var(--muted); font-size: 14px; }
     </div>
 
     <div class="projects" id="projects"></div>
+
     <p id="count" aria-live="polite"></p>
+
+    <noscript>
+      <p>
+        Please enable JavaScript to explore the research cards.
+        You can still read my background and use the contact
+        links below.
+      </p>
+    </noscript>
   </section>
 
   <section class="about" id="about">
     <div>
       <div class="eyebrow">About me</div>
-      <h2>At the intersection<br>of science and AI.</h2>
+      <h2>
+        At the intersection<br>
+        of science and AI.
+      </h2>
     </div>
 
     <div>
@@ -767,7 +1054,10 @@ dialog p { color: var(--muted); font-size: 14px; }
           <span>University of Florida</span>
         </p>
 
-       
+        <p>
+          <strong>B.E. in Mechanical Engineering</strong>
+          <span>Jadavpur University, India · 2006–2010</span>
+        </p>
       </div>
     </div>
   </section>
@@ -775,35 +1065,126 @@ dialog p { color: var(--muted); font-size: 14px; }
   <div class="contact" id="contact">
     <div>
       <div class="eyebrow">Connect & collaborate</div>
-      <h2>Good research starts<br>with a conversation.</h2>
+
+      <h2>
+        Good research starts<br>
+        with a conversation.
+      </h2>
+
       <p>
         Interested in scientific machine learning, physics,
         or a shared research question? Let’s connect.
       </p>
     </div>
 
-    <button class="button" id="contactButton">
-      Contact details <span>↗</span>
+    <button class="button" id="contactButton"
+            aria-haspopup="dialog">
+      Contact details <span aria-hidden="true">↗</span>
     </button>
   </div>
+
+  <noscript>
+    <p>
+      <a href="mailto:indrasisju@gmail.com">Email</a> ·
+      <a href="tel:+19253419540">Phone</a> ·
+      <a href="https://www.linkedin.com/in/indra1988/">LinkedIn</a> ·
+      <a href="https://scholar.google.com/citations?user=tafBqhkAAAAJ&amp;hl=en">
+        Google Scholar
+      </a>
+    </p>
+  </noscript>
+
 </main>
 
 <div class="wrap">
   <footer>
     <span>
-      © <span id="year"></span> Indrasis Chakraborty
+      © <span id="year">2026</span> Indrasis Chakraborty
     </span>
-    <span>Personal research portfolio · Views are my own.</span>
+
+    <span>
+      Personal research portfolio · Views are my own.
+    </span>
+
     <a href="#">Back to top ↑</a>
   </footer>
 </div>
 
-<dialog id="modal" aria-labelledby="modalTitle">
-  <button class="close" aria-label="Close dialog">×</button>
-  <div class="category" id="modalCategory"></div>
-  <h2 id="modalTitle"></h2>
-  <p id="modalText"></p>
-  <div class="dialogtags" id="modalTags"></div>
+<!-- Research details dialog -->
+
+<dialog id="researchModal" aria-labelledby="researchTitle">
+  <button class="close" aria-label="Close research details">×</button>
+
+  <div class="dialog-heading">
+    <div class="category" id="researchCategory"></div>
+    <h2 id="researchTitle"></h2>
+  </div>
+
+  <p id="researchText"></p>
+  <div class="dialogtags" id="researchTags"></div>
+</dialog>
+
+<!-- Contact details dialog -->
+
+<dialog id="contactModal" aria-labelledby="contactTitle">
+  <button class="close" aria-label="Close contact details">×</button>
+
+  <div class="dialog-heading">
+    <div class="category">Get in touch</div>
+    <h2 id="contactTitle">Let’s connect.</h2>
+  </div>
+
+  <p class="contact-description">
+    Reach out to discuss research, collaboration, or scientific AI.
+  </p>
+
+  <div class="contact-list">
+    <a class="contact-item" href="mailto:indrasisju@gmail.com">
+      <span>
+        <span class="contact-item-label">Email</span>
+        <span class="contact-item-value">
+          indrasisju@gmail.com
+        </span>
+      </span>
+      <span class="contact-item-arrow" aria-hidden="true">↗</span>
+    </a>
+
+    <a class="contact-item" href="tel:+19253419540">
+      <span>
+        <span class="contact-item-label">Phone</span>
+        <span class="contact-item-value">
+          (925) 341-9540
+        </span>
+      </span>
+      <span class="contact-item-arrow" aria-hidden="true">↗</span>
+    </a>
+
+    <a class="contact-item"
+       href="https://www.linkedin.com/in/indra1988/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span>
+        <span class="contact-item-label">LinkedIn</span>
+        <span class="contact-item-value">
+          Connect with me
+        </span>
+      </span>
+      <span class="contact-item-arrow" aria-hidden="true">↗</span>
+    </a>
+
+    <a class="contact-item"
+       href="https://scholar.google.com/citations?user=tafBqhkAAAAJ&amp;hl=en"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span>
+        <span class="contact-item-label">Google Scholar</span>
+        <span class="contact-item-value">
+          Publications & citations
+        </span>
+      </span>
+      <span class="contact-item-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
 </dialog>
 
 <script>
@@ -812,7 +1193,11 @@ const projects = [
     title: "Learning the nuclear equation of state",
     category: "Nuclear physics",
     group: ["physics", "methods"],
-    tags: ["SMASH", "Representation learning", "Event data"],
+    tags: [
+      "SMASH",
+      "Representation learning",
+      "Event data"
+    ],
     text: "Exploring machine learning approaches to connect heavy-ion collision observables with the nuclear equation of state.",
     detail: "This research explores how machine learning can extract information about the nuclear equation of state from simulated heavy-ion collision events. Areas of interest include representations of variable-length particle data, informative observables, and the effects of nuisance parameters.",
     art: "particles"
@@ -821,7 +1206,11 @@ const projects = [
     title: "Mapping detector distortions",
     category: "Particle detectors",
     group: ["physics", "methods"],
-    tags: ["sPHENIX", "3D U-Net", "Multi-GPU training"],
+    tags: [
+      "sPHENIX",
+      "3D U-Net",
+      "Multi-GPU training"
+    ],
     text: "Using three-dimensional neural networks to predict TPC distortion maps from detector data.",
     detail: "The sPHENIX TPC work uses 3D convolutional models to learn relationships between detector inputs and spatial distortion maps. The workflow includes distributed GPU training, inference, and comparisons of predicted and reference profiles.",
     art: "waves"
@@ -830,7 +1219,11 @@ const projects = [
     title: "Recovering weak scientific signals",
     category: "Scientific AI",
     group: ["physics", "methods"],
-    tags: ["Denoising", "Waveforms", "Signal recovery"],
+    tags: [
+      "Denoising",
+      "Waveforms",
+      "Signal recovery"
+    ],
     text: "Developing neural approaches to recover useful signals from noisy scientific measurements.",
     detail: "This work studies learned denoising for scientific waveforms, including xenon detector signals. The scientific challenge is to suppress noise while preserving the features needed for downstream analysis.",
     art: "signal"
@@ -839,7 +1232,11 @@ const projects = [
     title: "AI for energy systems",
     category: "Energy & infrastructure",
     group: ["applications"],
-    tags: ["Forecasting", "Explainability", "Uncertainty"],
+    tags: [
+      "Forecasting",
+      "Explainability",
+      "Uncertainty"
+    ],
     text: "Exploring forecasting, uncertainty, and interpretable models for complex energy systems.",
     detail: "Research interests include grid forecasting, fault prediction, and explainable AI. These applications motivate models that communicate uncertainty and provide useful information for interpreting changes in system behavior.",
     art: "network"
@@ -848,7 +1245,11 @@ const projects = [
     title: "Representing antibody sequences",
     category: "AI for biology",
     group: ["applications", "methods"],
-    tags: ["Protein embeddings", "Antibodies", "Developability"],
+    tags: [
+      "Protein embeddings",
+      "Antibodies",
+      "Developability"
+    ],
     text: "Working with sequence embeddings and developability scores to analyze antibody candidates.",
     detail: "This work applies pretrained antibody models to paired heavy- and light-chain sequences. Computational workflows produce sequence embeddings and developability-related scores for subsequent analysis.",
     art: "protein"
@@ -857,12 +1258,18 @@ const projects = [
     title: "Trustworthy scientific prediction",
     category: "Cross-cutting methods",
     group: ["methods"],
-    tags: ["Model evaluation", "UQ", "Scientific ML"],
+    tags: [
+      "Model evaluation",
+      "UQ",
+      "Scientific ML"
+    ],
     text: "Understanding model errors, uncertainty, and generalization across scientific applications.",
     detail: "Across scientific applications, model evaluation must connect numerical performance with the intended use. Interests include uncertainty quantification, error analysis, and assessing how well predictions generalize across changing input conditions.",
     art: "contours"
   }
 ];
+
+/* Generate decorative research illustrations. */
 
 function graphic(kind, index) {
   let shapes = "";
@@ -872,28 +1279,47 @@ function graphic(kind, index) {
       const x = 35 + i * 11.5;
       const y = 75 + Math.sin(i * .7) * 25;
 
-      if (i) {
-        const previousY = 75 + Math.sin((i - 1) * .7) * 25;
+      if (i > 0) {
+        const previousY =
+          75 + Math.sin((i - 1) * .7) * 25;
+
         shapes += `
-          <line x1="${x - 11.5}" y1="${previousY}"
-                x2="${x}" y2="${y}"
-                stroke="#72a28b" stroke-width="1.5"/>
+          <line
+            x1="${x - 11.5}"
+            y1="${previousY}"
+            x2="${x}"
+            y2="${y}"
+            stroke="#72a28b"
+            stroke-width="1.5"
+          />
         `;
       }
 
       shapes += `
-        <circle cx="${x}" cy="${y}"
-                r="${i % 3 === 0 ? 5 : 3}"
-                fill="${i % 3 === 0 ? "#286d5b" : "#a0bc8e"}"/>
+        <circle
+          cx="${x}"
+          cy="${y}"
+          r="${i % 3 === 0 ? 5 : 3}"
+          fill="${i % 3 === 0 ? "#286d5b" : "#a0bc8e"}"
+        />
       `;
 
       if (kind === "protein") {
         shapes += `
-          <circle cx="${x}" cy="${150 - y}"
-                  r="3" fill="#86a375"/>
-          <line x1="${x}" y1="${y}"
-                x2="${x}" y2="${150 - y}"
-                stroke="#9db89b" opacity=".5"/>
+          <circle
+            cx="${x}"
+            cy="${150 - y}"
+            r="3"
+            fill="#86a375"
+          />
+          <line
+            x1="${x}"
+            y1="${y}"
+            x2="${x}"
+            y2="${150 - y}"
+            stroke="#9db89b"
+            opacity=".5"
+          />
         `;
       }
     }
@@ -904,11 +1330,18 @@ function graphic(kind, index) {
         const y = 35 + j * 40;
 
         shapes += `
-          <path d="M${x} ${y}
-                   L${x + 60} ${y + ((i + j) % 2 ? 40 : -40)}"
-                stroke="#9bb49b"/>
-          <circle cx="${x}" cy="${y}"
-                  r="5" fill="#427b63"/>
+          <path
+            d="M${x} ${y}
+               L${x + 60} ${y + ((i + j) % 2 ? 40 : -40)}"
+            fill="none"
+            stroke="#9bb49b"
+          />
+          <circle
+            cx="${x}"
+            cy="${y}"
+            r="5"
+            fill="#427b63"
+          />
         `;
       }
     }
@@ -936,29 +1369,66 @@ function graphic(kind, index) {
       }
 
       shapes += `
-        <path d="${path}"
-              fill="none"
-              stroke="${j === 1 ? "#246d5b" : "#81a78d"}"
-              stroke-width="${kind === "signal" ? 1.6 : 1}"
-              opacity="${kind === "signal" && j === 0 ? .45 : .8}"/>
+        <path
+          d="${path}"
+          fill="none"
+          stroke="${j === 1 ? "#246d5b" : "#81a78d"}"
+          stroke-width="${kind === "signal" ? 1.6 : 1}"
+          opacity="${kind === "signal" && j === 0 ? .45 : .8}"
+        />
       `;
     }
   }
 
   return `
-    <svg viewBox="0 0 360 150"
-         preserveAspectRatio="xMidYMid slice"
-         aria-hidden="true">
+    <svg
+      viewBox="0 0 360 150"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+    >
       ${shapes}
     </svg>
-    <span class="project-number">RESEARCH / 0${index + 1}</span>
+
+    <span class="project-number">
+      RESEARCH / 0${index + 1}
+    </span>
   `;
 }
+
+/* Research dialog. */
+
+const researchModal =
+  document.getElementById("researchModal");
+
+function openResearch(project) {
+  document.getElementById("researchCategory").textContent =
+    project.category;
+
+  document.getElementById("researchTitle").textContent =
+    project.title;
+
+  document.getElementById("researchText").textContent =
+    project.detail;
+
+  const tags = document.getElementById("researchTags");
+  tags.replaceChildren();
+
+  project.tags.forEach(tag => {
+    const span = document.createElement("span");
+    span.textContent = tag;
+    tags.appendChild(span);
+  });
+
+  researchModal.showModal();
+}
+
+/* Render research cards. */
 
 const container = document.getElementById("projects");
 
 projects.forEach((project, index) => {
   const card = document.createElement("article");
+
   card.className = "card";
   card.dataset.groups = project.group.join(" ");
 
@@ -966,46 +1436,67 @@ projects.forEach((project, index) => {
     <div class="card-visual">
       ${graphic(project.art, index)}
     </div>
+
     <div class="cardbody">
-      <div class="category">${project.category}</div>
-      <h3>${project.title}</h3>
-      <p>${project.text}</p>
-      <div class="tags">
-        ${project.tags.map(tag => `<span>${tag}</span>`).join("")}
-      </div>
-      <button class="details">
-        Explore research <span aria-hidden="true">↗</span>
+      <div class="category"></div>
+      <h3></h3>
+      <p></p>
+      <div class="tags"></div>
+      <button class="details" aria-haspopup="dialog">
+        Explore research
+        <span aria-hidden="true">↗</span>
       </button>
     </div>
   `;
 
-  card.querySelector("button").addEventListener("click", () => {
-    openModal(
-      project.category,
-      project.title,
-      project.detail,
-      project.tags
-    );
+  card.querySelector(".category").textContent =
+    project.category;
+
+  card.querySelector("h3").textContent =
+    project.title;
+
+  card.querySelector("p").textContent =
+    project.text;
+
+  const tags = card.querySelector(".tags");
+
+  project.tags.forEach(tag => {
+    const span = document.createElement("span");
+    span.textContent = tag;
+    tags.appendChild(span);
   });
+
+  card.querySelector("button").addEventListener(
+    "click",
+    () => openResearch(project)
+  );
 
   container.appendChild(card);
 });
 
+/* Filter research cards. */
+
 document.querySelectorAll(".filter").forEach(button => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".filter").forEach(other => {
-      other.classList.toggle("active", other === button);
-      other.setAttribute("aria-pressed", String(other === button));
+      const selected = other === button;
+
+      other.classList.toggle("active", selected);
+      other.setAttribute("aria-pressed", String(selected));
     });
 
     let visibleCount = 0;
 
     document.querySelectorAll(".card").forEach(card => {
+      const groups = card.dataset.groups.split(" ");
+
       card.hidden =
         button.dataset.filter !== "all" &&
-        !card.dataset.groups.split(" ").includes(button.dataset.filter);
+        !groups.includes(button.dataset.filter);
 
-      if (!card.hidden) visibleCount++;
+      if (!card.hidden) {
+        visibleCount++;
+      }
     });
 
     document.getElementById("count").textContent =
@@ -1016,53 +1507,48 @@ document.querySelectorAll(".filter").forEach(button => {
 document.getElementById("count").textContent =
   `Showing ${projects.length} research areas`;
 
-const modal = document.getElementById("modal");
+/* Contact dialog. */
 
-function openModal(category, title, text, tags = []) {
-  document.getElementById("modalCategory").textContent = category;
-  document.getElementById("modalTitle").textContent = title;
-  document.getElementById("modalText").textContent = text;
+const contactModal =
+  document.getElementById("contactModal");
 
-  const holder = document.getElementById("modalTags");
-  holder.replaceChildren();
-
-  tags.forEach(tag => {
-    const span = document.createElement("span");
-    span.textContent = tag;
-    holder.appendChild(span);
+document.getElementById("contactButton")
+  .addEventListener("click", () => {
+    contactModal.showModal();
   });
 
-  modal.showModal();
-}
+/* Close dialogs with their close button, Escape, or backdrop. */
 
-modal.querySelector(".close").addEventListener("click", () => {
-  modal.close();
+document.querySelectorAll("dialog").forEach(dialog => {
+  dialog.querySelector(".close")
+    .addEventListener("click", () => {
+      dialog.close();
+    });
+
+  dialog.addEventListener("click", event => {
+    if (event.target !== dialog) {
+      return;
+    }
+
+    const bounds = dialog.getBoundingClientRect();
+
+    const outside =
+      event.clientX < bounds.left ||
+      event.clientX > bounds.right ||
+      event.clientY < bounds.top ||
+      event.clientY > bounds.bottom;
+
+    if (outside) {
+      dialog.close();
+    }
+  });
 });
 
-modal.addEventListener("click", event => {
-  if (event.target !== modal) return;
+/* Footer year. */
 
-  const bounds = modal.getBoundingClientRect();
-
-  if (
-    event.clientX < bounds.left ||
-    event.clientX > bounds.right ||
-    event.clientY < bounds.top ||
-    event.clientY > bounds.bottom
-  ) {
-    modal.close();
-  }
-});
-
-document.getElementById("contactButton").addEventListener("click", () => {
-  openModal(
-    "Portfolio preview",
-    "email: indrasisju@gmail.com, cell: 9253419540",
-    "Linkedin: https://www.linkedin.com/in/indra1988/, Google Scholar: https://scholar.google.com/citations?user=tafBqhkAAAAJ&hl=en"
-  );
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
+
 </body>
 </html>
