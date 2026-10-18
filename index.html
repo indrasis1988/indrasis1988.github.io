@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Indrasis Chakraborty — scientific machine learning, physics, and AI research at Lawrence Livermore National Laboratory.">
+<meta name="description"
+      content="Indrasis Chakraborty — scientific machine learning, physics, and AI research.">
+
 <title>Indrasis Chakraborty — AI & Scientific Discovery</title>
 
 <style>
@@ -207,7 +209,7 @@ h1 em {
   flex-shrink: 0;
 }
 
-/* Scientific illustration */
+/* Hero illustration */
 
 .art {
   background: #e9eee7;
@@ -348,7 +350,7 @@ h2 {
 }
 
 .card-visual {
-  height: 148px;
+  height: 230px;
   position: relative;
   overflow: hidden;
   background: #e1eae1;
@@ -360,6 +362,18 @@ h2 {
 .card-visual svg {
   width: 100%;
   height: 100%;
+}
+
+.card-visual.paper-visual {
+  background: white;
+  padding: 12px;
+}
+
+.paper-figure {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .project-number {
@@ -593,6 +607,41 @@ dialog p {
   border-radius: 3px;
 }
 
+.research-figure {
+  margin: 22px 0;
+  padding: 12px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.research-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.research-figure figcaption {
+  margin-top: 12px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.paper-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.paper-link:hover {
+  text-decoration: underline;
+}
+
 /* Contact details */
 
 .contact-description {
@@ -776,10 +825,6 @@ footer {
     gap: 7px;
   }
 
-  .card-visual {
-    height: 160px;
-  }
-
   dialog {
     padding: 28px 22px;
   }
@@ -866,7 +911,8 @@ footer {
       </div>
     </div>
 
-    <div class="art" role="img"
+    <div class="art"
+         role="img"
          aria-label="Abstract scientific illustration of particles and connected learned representations">
 
       <div class="art-label">
@@ -875,7 +921,9 @@ footer {
 
       <svg viewBox="0 0 450 470" aria-hidden="true">
         <defs>
-          <pattern id="grid" width="25" height="25"
+          <pattern id="grid"
+                   width="25"
+                   height="25"
                    patternUnits="userSpaceOnUse">
             <circle cx="1" cy="1" r=".8"
                     fill="#a7bca7" opacity=".55"/>
@@ -883,18 +931,19 @@ footer {
 
           <radialGradient id="glow">
             <stop stop-color="#c7ddbd"/>
-            <stop offset="1" stop-color="#e9eee7"
+            <stop offset="1"
+                  stop-color="#e9eee7"
                   stop-opacity="0"/>
           </radialGradient>
         </defs>
 
         <rect width="450" height="470" fill="url(#grid)"/>
+        <circle cx="230" cy="228" r="190" fill="url(#glow)"/>
 
-        <circle cx="230" cy="228" r="190"
-                fill="url(#glow)"/>
-
-        <g fill="none" stroke="#8eaa90"
-           stroke-width=".8" opacity=".8">
+        <g fill="none"
+           stroke="#8eaa90"
+           stroke-width=".8"
+           opacity=".8">
           <ellipse cx="230" cy="230" rx="155" ry="67"
                    transform="rotate(-34 230 230)"/>
           <ellipse cx="230" cy="230" rx="155" ry="67"
@@ -931,8 +980,7 @@ footer {
 
         <circle cx="230" cy="230" r="22"
                 fill="#c5ddc2" stroke="#97b899"/>
-        <circle cx="230" cy="230" r="9"
-                fill="#216e5d"/>
+        <circle cx="230" cy="230" r="9" fill="#216e5d"/>
 
         <g fill="#94ac7e">
           <circle cx="93" cy="298" r="4"/>
@@ -972,31 +1020,35 @@ footer {
       </p>
     </div>
 
-    <div class="filters" role="group"
+    <div class="filters"
+         role="group"
          aria-label="Filter research projects">
       <button class="filter active"
-              data-filter="all" aria-pressed="true">
+              data-filter="all"
+              aria-pressed="true">
         All research
       </button>
 
       <button class="filter"
-              data-filter="physics" aria-pressed="false">
+              data-filter="physics"
+              aria-pressed="false">
         Physics
       </button>
 
       <button class="filter"
-              data-filter="methods" aria-pressed="false">
+              data-filter="methods"
+              aria-pressed="false">
         AI methods
       </button>
 
       <button class="filter"
-              data-filter="applications" aria-pressed="false">
+              data-filter="applications"
+              aria-pressed="false">
         Applications
       </button>
     </div>
 
     <div class="projects" id="projects"></div>
-
     <p id="count" aria-live="polite"></p>
 
     <noscript>
@@ -1028,7 +1080,7 @@ footer {
 
       <p>
         A common thread across my work is learning useful
-        representations of complex data and connecting model
+        representations of complex data—and connecting model
         predictions to the scientific questions behind them.
       </p>
 
@@ -1053,6 +1105,11 @@ footer {
           <strong>M.S. in Applied Mathematics</strong>
           <span>University of Florida</span>
         </p>
+
+        <p>
+          <strong>B.E. in Mechanical Engineering</strong>
+          <span>Jadavpur University, India · 2006–2010</span>
+        </p>
       </div>
     </div>
   </section>
@@ -1072,7 +1129,8 @@ footer {
       </p>
     </div>
 
-    <button class="button" id="contactButton"
+    <button class="button"
+            id="contactButton"
             aria-haspopup="dialog">
       Contact details <span aria-hidden="true">↗</span>
     </button>
@@ -1082,7 +1140,9 @@ footer {
     <p>
       <a href="mailto:indrasisju@gmail.com">Email</a> ·
       <a href="tel:+19253419540">Phone</a> ·
-      <a href="https://www.linkedin.com/in/indra1988/">LinkedIn</a> ·
+      <a href="https://www.linkedin.com/in/indra1988/">
+        LinkedIn
+      </a> ·
       <a href="https://scholar.google.com/citations?user=tafBqhkAAAAJ&amp;hl=en">
         Google Scholar
       </a>
@@ -1105,10 +1165,12 @@ footer {
   </footer>
 </div>
 
-<!-- Research details dialog -->
+<!-- Research details -->
 
 <dialog id="researchModal" aria-labelledby="researchTitle">
-  <button class="close" aria-label="Close research details">×</button>
+  <button class="close" aria-label="Close research details">
+    ×
+  </button>
 
   <div class="dialog-heading">
     <div class="category" id="researchCategory"></div>
@@ -1116,13 +1178,20 @@ footer {
   </div>
 
   <p id="researchText"></p>
+
+  <div id="researchMedia"></div>
+
   <div class="dialogtags" id="researchTags"></div>
+
+  <div id="researchLinks"></div>
 </dialog>
 
-<!-- Contact details dialog -->
+<!-- Contact details -->
 
 <dialog id="contactModal" aria-labelledby="contactTitle">
-  <button class="close" aria-label="Close contact details">×</button>
+  <button class="close" aria-label="Close contact details">
+    ×
+  </button>
 
   <div class="dialog-heading">
     <div class="category">Get in touch</div>
@@ -1220,8 +1289,12 @@ const projects = [
       "Signal recovery"
     ],
     text: "Developing neural approaches to recover useful signals from noisy scientific measurements.",
-    detail: "This work studies learned denoising for scientific waveforms, including xenon detector signals. The scientific challenge is to suppress noise while preserving the features needed for downstream analysis.",
-    art: "signal"
+    detail: "This work studies supervised, semi-supervised, and unsupervised denoising of simulated liquid xenon detector signals. The goal is to reduce noise while preserving the charge information needed for precise energy reconstruction. The figure compares a noisy waveform with the true signal and the supervised U-Net prediction, with residuals shown below.",
+    art: "signal",
+    image: "./denoising-figure.png",
+    imageAlt: "Noisy waveform compared with the true signal and supervised U-Net prediction, with residuals below.",
+    caption: "Figure 2 from Xenon Signal Denoising via Supervised, Semi-Supervised, and Unsupervised Models — Grant Parker, Jason Brodsky, and Indra Chakraborty.",
+    paperUrl: "https://arxiv.org/abs/2603.27005v2"
   },
   {
     title: "AI for energy systems",
@@ -1264,7 +1337,7 @@ const projects = [
   }
 ];
 
-/* Generate decorative research illustrations. */
+/* Decorative illustrations for cards without a paper figure. */
 
 function graphic(kind, index) {
   let shapes = "";
@@ -1341,24 +1414,14 @@ function graphic(kind, index) {
       }
     }
   } else {
-    const numberOfLines = kind === "signal" ? 2 : 8;
-
-    for (let j = 0; j < numberOfLines; j++) {
+    for (let j = 0; j < 8; j++) {
       let path = "";
 
       for (let x = 0; x <= 360; x += 3) {
-        let y;
-
-        if (kind === "signal") {
-          y = 75
-            + Math.sin(x * .065)
-            * Math.exp(-Math.pow((x - 180) / 65, 2)) * 42
-            + (j === 0 ? Math.sin(x * 1.6) * 8 : 0);
-        } else {
-          y = 26 + j * 13
-            + Math.sin(x * .025 + j * .5) * 17
-            + Math.cos(x * .014) * 7;
-        }
+        const y =
+          26 + j * 13
+          + Math.sin(x * .025 + j * .5) * 17
+          + Math.cos(x * .014) * 7;
 
         path += `${x === 0 ? "M" : "L"}${x},${y} `;
       }
@@ -1368,8 +1431,8 @@ function graphic(kind, index) {
           d="${path}"
           fill="none"
           stroke="${j === 1 ? "#246d5b" : "#81a78d"}"
-          stroke-width="${kind === "signal" ? 1.6 : 1}"
-          opacity="${kind === "signal" && j === 0 ? .45 : .8}"
+          stroke-width="1"
+          opacity=".8"
         />
       `;
     }
@@ -1378,7 +1441,7 @@ function graphic(kind, index) {
   return `
     <svg
       viewBox="0 0 360 150"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
       aria-hidden="true"
     >
       ${shapes}
@@ -1390,7 +1453,7 @@ function graphic(kind, index) {
   `;
 }
 
-/* Research dialog. */
+/* Research details dialog. */
 
 const researchModal =
   document.getElementById("researchModal");
@@ -1414,7 +1477,40 @@ function openResearch(project) {
     tags.appendChild(span);
   });
 
+  const media = document.getElementById("researchMedia");
+  media.replaceChildren();
+
+  if (project.image) {
+    const figure = document.createElement("figure");
+    figure.className = "research-figure";
+
+    const image = document.createElement("img");
+    image.src = project.image;
+    image.alt = project.imageAlt;
+    image.decoding = "async";
+
+    const caption = document.createElement("figcaption");
+    caption.textContent = project.caption;
+
+    figure.append(image, caption);
+    media.appendChild(figure);
+  }
+
+  const links = document.getElementById("researchLinks");
+  links.replaceChildren();
+
+  if (project.paperUrl) {
+    const link = document.createElement("a");
+    link.className = "paper-link";
+    link.href = project.paperUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Read the paper ↗";
+    links.appendChild(link);
+  }
+
   researchModal.showModal();
+  researchModal.scrollTop = 0;
 }
 
 /* Render research cards. */
@@ -1423,26 +1519,41 @@ const container = document.getElementById("projects");
 
 projects.forEach((project, index) => {
   const card = document.createElement("article");
-
   card.className = "card";
   card.dataset.groups = project.group.join(" ");
 
   card.innerHTML = `
-    <div class="card-visual">
-      ${graphic(project.art, index)}
-    </div>
+    <div class="card-visual"></div>
 
     <div class="cardbody">
       <div class="category"></div>
       <h3></h3>
       <p></p>
       <div class="tags"></div>
+
       <button class="details" aria-haspopup="dialog">
         Explore research
         <span aria-hidden="true">↗</span>
       </button>
     </div>
   `;
+
+  const visual = card.querySelector(".card-visual");
+
+  if (project.image) {
+    visual.classList.add("paper-visual");
+
+    const image = document.createElement("img");
+    image.className = "paper-figure";
+    image.src = project.image;
+    image.alt = project.imageAlt;
+    image.loading = "lazy";
+    image.decoding = "async";
+
+    visual.appendChild(image);
+  } else {
+    visual.innerHTML = graphic(project.art, index);
+  }
 
   card.querySelector(".category").textContent =
     project.category;
@@ -1469,7 +1580,7 @@ projects.forEach((project, index) => {
   container.appendChild(card);
 });
 
-/* Filter research cards. */
+/* Research filters. */
 
 document.querySelectorAll(".filter").forEach(button => {
   button.addEventListener("click", () => {
@@ -1510,9 +1621,10 @@ const contactModal =
 document.getElementById("contactButton")
   .addEventListener("click", () => {
     contactModal.showModal();
+    contactModal.scrollTop = 0;
   });
 
-/* Close dialogs with their close button, Escape, or backdrop. */
+/* Close dialogs using the button, Escape, or backdrop. */
 
 document.querySelectorAll("dialog").forEach(dialog => {
   dialog.querySelector(".close")
