@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indrasis Chakraborty — AI & Scientific Discovery</title>
+<style>
+:root{--paper:#f7f6f2;--ink:#182d36;--muted:#64716f;--line:#d9dfd8;--accent:#14796d;--mint:#dcebe2}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #de9b42;outline-offset:5px}
+.wrap{max-width:1180px;margin:auto;padding:0 40px}
+header{position:sticky;top:0;z-index:10;background:#f7f6f2ee;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}nav{height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-size:17px;font-weight:750;letter-spacing:-.6px}.brand span{color:var(--accent)}.navlinks{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:600}.navlinks a:hover{color:var(--accent)}.navcontact{border:1px solid #b7c5bd;border-radius:30px;padding:9px 19px}
+.hero{padding:95px 0 88px;display:grid;grid-template-columns:1.2fr 1fr;gap:65px;align-items:center}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:10px}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%}h1,h2,h3,p{margin-top:0}h1{font:clamp(48px,5.2vw,74px)/1.07 Georgia,serif;letter-spacing:-3px;margin:24px 0}h1 em{color:var(--accent);font-weight:400}.intro{max-width:495px;font-size:17px;color:var(--muted);line-height:1.8}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}.button{padding:12px 20px;border-radius:5px;font-size:13px;font-weight:650;border:1px solid #c8d1c9;display:inline-flex;gap:24px;align-items:center}.primary{background:var(--ink);border-color:var(--ink);color:white}.button:hover{transform:translateY(-2px)}.affiliation{margin-top:38px;color:var(--muted);font-size:12px;display:flex;align-items:center;gap:12px}.affiliation:before{content:"";width:27px;height:1px;background:var(--accent)}
+.art{background:#e9eee7;border:1px solid #d9e2d7;border-radius:8px;position:relative;overflow:hidden;aspect-ratio:1/1.04;display:flex;align-items:center;justify-content:center}.art svg{width:100%;height:100%}.art-label{position:absolute;top:23px;left:24px;font:10px monospace;letter-spacing:1px;color:#527466}.art-bottom{position:absolute;bottom:22px;left:24px;right:24px;display:flex;justify-content:space-between;color:#527466;font:10px monospace}.art-tag{position:absolute;bottom:60px;left:25px;background:#f7f6f2cc;border:1px solid #cbd8cc;padding:8px 12px;border-radius:4px;font-size:10px;letter-spacing:1px}
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;padding:23px 0;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}.strip span:before{content:"✳";color:var(--accent);margin-right:12px}
+section{padding:83px 0}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:32px}h2{font:42px/1.15 Georgia,serif;letter-spacing:-1.2px;margin:10px 0 0}.sectionnote{font-size:13px;color:var(--muted);max-width:290px;margin:0}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.filter{border:1px solid var(--line);border-radius:30px;background:transparent;font-size:12px;color:var(--muted);padding:7px 16px}.filter.active{background:var(--ink);border-color:var(--ink);color:white}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fcfcf9;display:flex;flex-direction:column}.card[hidden]{display:none}.card-visual{height:148px;position:relative;overflow:hidden;background:#e1eae1;display:flex;align-items:center;justify-content:center}.card-visual svg{width:100%;height:100%}.project-number{position:absolute;left:17px;top:13px;font:10px monospace;color:#406655}.cardbody{padding:24px;display:flex;flex-direction:column;flex:1}.category{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:700}h3{font-size:19px;letter-spacing:-.5px;line-height:1.35;margin:10px 0}.card p{font-size:13px;color:var(--muted);margin-bottom:21px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}.tags span{font-size:10px;background:#eff2ed;color:#5b6c62;padding:3px 8px;border-radius:3px}.details{border:0;background:none;color:var(--accent);padding:21px 0 0;text-align:left;font-size:12px;font-weight:650}.details:hover{text-decoration:underline}
+.about{display:grid;grid-template-columns:.8fr 1.25fr;gap:90px;border-top:1px solid var(--line)}.about p{font-size:16px;color:var(--muted)}.about strong{color:var(--ink);font-weight:600}.expertise{margin:25px 0 32px;display:flex;flex-wrap:wrap;gap:9px}.expertise span{font-size:12px;padding:7px 12px;border:1px solid var(--line);border-radius:4px}.education{padding-top:23px;border-top:1px solid var(--line)}.education small{font-size:10px;letter-spacing:1.5px;color:var(--accent);font-weight:700}.education p{font-size:13px;margin:10px 0 0}.education span{display:block;color:var(--muted);font-size:12px}
+.contact{background:var(--ink);border-radius:8px;padding:54px;display:flex;align-items:center;justify-content:space-between;gap:40px;color:var(--paper);margin-bottom:65px}.contact .eyebrow{color:#a7d9c4}.contact h2{font-size:39px;margin-bottom:15px}.contact p{font-size:14px;color:#b7c6c5;max-width:520px;margin:0}.contact .button{background:var(--paper);color:var(--ink);white-space:nowrap;border:0}footer{border-top:1px solid var(--line);padding:25px 0;display:flex;justify-content:space-between;gap:20px;font-size:11px;color:var(--muted)}
+dialog{width:min(580px,90vw);border:1px solid var(--line);border-radius:10px;padding:36px;background:var(--paper);color:var(--ink);max-height:85vh}dialog::backdrop{background:#132d35a8;backdrop-filter:blur(4px)}dialog h2{font-size:30px;margin:15px 0 20px}dialog p{color:var(--muted);font-size:14px}.close{float:right;background:none;border:1px solid var(--line);border-radius:50%;width:32px;height:32px;font-size:20px}.dialogtags{display:flex;gap:7px;flex-wrap:wrap}.dialogtags span{font-size:11px;background:var(--mint);padding:5px 9px;border-radius:3px}
+@media(max-width:900px){.hero{gap:30px}.projects{grid-template-columns:repeat(2,1fr)}.about{gap:45px}.strip{flex-wrap:wrap;font-size:10px}.contact{padding:35px}h1{font-size:56px}}
+@media(max-width:620px){.wrap{padding:0 22px}nav{height:68px}.brand{font-size:15px}.navlinks{gap:17px;font-size:11px}.navcontact{display:none}.hero{grid-template-columns:1fr;padding:54px 0 42px;gap:35px}h1{font-size:53px}.art{aspect-ratio:1.4}.strip{justify-content:flex-start;gap:15px 25px}.projects{grid-template-columns:1fr}.sectionhead{display:block}.sectionnote{margin-top:20px}section{padding:55px 0}h2{font-size:36px}.about{grid-template-columns:1fr;gap:25px}.contact{display:block;padding:30px 25px;margin-bottom:40px}.contact h2{font-size:34px}.contact .button{margin-top:25px}footer{flex-direction:column;gap:7px}.card-visual{height:160px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button:hover{transform:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<nav aria-label="Main navigation">
+<a href="#" class="brand">Indrasis Chakraborty<span>.</span></a>
+<div class="navlinks"><a href="#research">Research</a><a href="#about">About</a><a href="#contact" class="navcontact">Let’s connect ↗</a></div>
+</nav>
+</div>
+</header>
+<main class="wrap">
+<div class="hero">
+<div>
+<div class="eyebrow"><span class="dot"></span> AI · Physics · Scientific computing</div>
+<h1>Learning from data.<br>Discovering<br><em>the physics.</em></h1>
+<p class="intro">I’m Indrasis Chakraborty. My work brings machine learning and scientific computing together to understand complex systems and extract insight from challenging data.</p>
+<div class="actions"><a class="button primary" href="#research">Explore my research <span>↗</span></a><a class="button" href="#about">About me <span>↓</span></a></div>
+<div class="affiliation">Lawrence Livermore National Laboratory</div>
+</div>
+<div class="art" role="img" aria-label="Abstract scientific illustration of particles and connected learned representations">
+<div class="art-label">EXPLORING THE SPACE BETWEEN DATA & DISCOVERY</div>
+<svg viewBox="0 0 450 470" aria-hidden="true">
+<defs>
+<pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#a7bca7" opacity=".55"/></pattern>
+<radialGradient id="glow"><stop stop-color="#c7ddbd"/><stop offset="1" stop-color="#e9eee7" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="450" height="470" fill="url(#grid)"/><circle cx="230" cy="228" r="190" fill="url(#glow)"/>
+<g fill="none" stroke="#8eaa90" stroke-width=".8" opacity=".8">
+<ellipse cx="230" cy="230" rx="155" ry="67" transform="rotate(-34 230 230)"/>
+<ellipse cx="230" cy="230" rx="155" ry="67" transform="rotate(34 230 230)"/>
+<ellipse cx="230" cy="230" rx="155" ry="67" transform="rotate(90 230 230)"/>
+<circle cx="230" cy="230" r="114" stroke-dasharray="2 7"/>
+</g>
+<g stroke="#588c77" stroke-width="1" opacity=".6">
+<path d="M117 202 179 155 259 170 326 214 283 294 203 320 145 266 117 202 230 230 179 155M230 230 259 170M230 230 326 214M230 230 283 294M230 230 203 320M230 230 145 266M179 155 283 294M259 170 145 266M117 202 283 294"/>
+</g>
+<g fill="#297665"><circle cx="117" cy="202" r="5"/><circle cx="179" cy="155" r="6"/><circle cx="259" cy="170" r="5"/><circle cx="326" cy="214" r="6"/><circle cx="283" cy="294" r="5"/><circle cx="203" cy="320" r="6"/><circle cx="145" cy="266" r="5"/></g>
+<circle cx="230" cy="230" r="22" fill="#c5ddc2" stroke="#97b899"/><circle cx="230" cy="230" r="9" fill="#216e5d"/>
+<g fill="#94ac7e"><circle cx="93" cy="298" r="4"/><circle cx="311" cy="116" r="4"/><circle cx="356" cy="291" r="3"/><circle cx="170" cy="110" r="3"/></g>
+</svg>
+<div class="art-tag">PHYSICS × MACHINE LEARNING</div>
+<div class="art-bottom"><span>SCIENTIFIC REPRESENTATIONS</span><span>01 / ∞</span></div>
+</div>
+</div>
+<div class="strip"><span>Scientific machine learning</span><span>Uncertainty quantification</span><span>High performance computing</span></div>
+
+<section id="research">
+<div class="sectionhead"><div><div class="eyebrow">Research & applications</div><h2>Questions that drive my work.</h2></div><p class="sectionnote">From particle detectors to energy systems, using AI to reveal useful structure in complex data.</p></div>
+<div class="filters" role="group" aria-label="Filter research projects">
+<button class="filter active" data-filter="all" aria-pressed="true">All research</button>
+<button class="filter" data-filter="physics" aria-pressed="false">Physics</button>
+<button class="filter" data-filter="methods" aria-pressed="false">AI methods</button>
+<button class="filter" data-filter="applications" aria-pressed="false">Applications</button>
+</div>
+<div class="projects" id="projects"></div>
+<p id="count" aria-live="polite" style="font-size:11px;color:var(--muted);margin:18px 0 0"></p>
+</section>
+
+<section class="about" id="about">
+<div><div class="eyebrow">About me</div><h2>At the intersection<br>of science and AI.</h2></div>
+<div>
+<p>I work at <strong>Lawrence Livermore National Laboratory</strong>, applying AI and machine learning to scientific problems. My interests span nuclear and particle physics, detector data, uncertainty quantification, and energy systems.</p>
+<p>A common thread across my work is learning useful representations of complex data—and connecting model predictions to the scientific questions behind them.</p>
+<div class="expertise"><span>PyTorch</span><span>Deep learning</span><span>Scientific computing</span><span>Distributed GPU training</span><span>Uncertainty quantification</span><span>Signal processing</span></div>
+<div class="education"><small>EDUCATION HIGHLIGHT</small><p><strong>B.E. in Mechanical Engineering</strong><span>Jadavpur University, India · 2006–2010</span></p></div>
+</div>
+</section>
+
+<div class="contact" id="contact">
+<div><div class="eyebrow">Connect & collaborate</div><h2>Good research starts<br>with a conversation.</h2><p>Interested in scientific machine learning, physics, or a shared research question? Let’s connect.</p></div>
+<button class="button" id="contactButton">Contact details <span>↗</span></button>
+</div>
+</main>
+<div class="wrap"><footer><span>© <span id="year"></span> Indrasis Chakraborty</span><span>Personal research portfolio · Views are my own.</span><a href="#">Back to top ↑</a></footer></div>
+
+<dialog id="modal" aria-labelledby="modalTitle">
+<button class="close" aria-label="Close dialog">×</button>
+<div class="category" id="modalCategory"></div>
+<h2 id="modalTitle"></h2>
+<p id="modalText"></p>
+<div class="dialogtags" id="modalTags"></div>
+</dialog>
+
+<script>
+const projects=[
+{title:"Learning the nuclear equation of state",category:"Nuclear physics",group:["physics","methods"],tags:["SMASH","Representation learning","Event data"],text:"Exploring machine learning approaches to connect heavy-ion collision observables with the nuclear equation of state.",detail:"This research explores how machine learning can extract information about the nuclear equation of state from simulated heavy-ion collision events. Areas of interest include representations of variable-length particle data, informative observables, and the effects of nuisance parameters.",art:"particles"},
+{title:"Mapping detector distortions",category:"Particle detectors",group:["physics","methods"],tags:["sPHENIX","3D U-Net","Multi-GPU training"],text:"Using three-dimensional neural networks to predict TPC distortion maps from detector data.",detail:"The sPHENIX TPC work uses 3D convolutional models to learn relationships between detector inputs and spatial distortion maps. The workflow includes distributed GPU training, inference, and comparisons of predicted and reference profiles.",art:"waves"},
+{title:"Recovering weak scientific signals",category:"Scientific AI",group:["physics","methods"],tags:["Denoising","Waveforms","Signal recovery"],text:"Developing neural approaches to recover useful signals from noisy scientific measurements.",detail:"This work studies learned denoising for scientific waveforms, including xenon detector signals. The scientific challenge is to suppress noise while preserving the features needed for downstream analysis.",art:"signal"},
+{title:"AI for energy systems",category:"Energy & infrastructure",group:["applications"],tags:["Forecasting","Explainability","Uncertainty"],text:"Exploring forecasting, uncertainty, and interpretable models for complex energy systems.",detail:"Research interests include grid forecasting, fault prediction, and explainable AI. These applications motivate models that communicate uncertainty and provide useful information for interpreting changes in system behavior.",art:"network"},
+{title:"Representing antibody sequences",category:"AI for biology",group:["applications","methods"],tags:["Protein embeddings","Antibodies","Developability"],text:"Working with sequence embeddings and developability scores to analyze antibody candidates.",detail:"This work applies pretrained antibody models to paired heavy- and light-chain sequences. Computational workflows produce sequence embeddings and developability-related scores for subsequent analysis.",art:"protein"},
+{title:"Trustworthy scientific prediction",category:"Cross-cutting methods",group:["methods"],tags:["Model evaluation","UQ","Scientific ML"],text:"Understanding model errors, uncertainty, and generalization across scientific applications.",detail:"Across scientific applications, model evaluation must connect numerical performance with the intended use. Interests include uncertainty quantification, error analysis, and assessing how well predictions generalize across changing input conditions.",art:"contours"}
+];
+function graphic(kind,index){
+let s="";
+if(kind==="particles"||kind==="protein"){
+for(let i=0;i<24;i++){const x=35+i*11.5,y=75+Math.sin(i*.7)*25;
+if(i)s+=`<line x1="${x-11.5}" y1="${75+Math.sin((i-1)*.7)*25}" x2="${x}" y2="${y}" stroke="#72a28b" stroke-width="1.5"/>`;
+s+=`<circle cx="${x}" cy="${y}" r="${i%3===0?5:3}" fill="${i%3===0?'#286d5b':'#a0bc8e'}"/>`;
+if(kind==="protein")s+=`<circle cx="${x}" cy="${150-y}" r="3" fill="#86a375"/><line x1="${x}" y1="${y}" x2="${x}" y2="${150-y}" stroke="#9db89b" opacity=".5"/>`;
+}}
+else if(kind==="network"){
+for(let i=0;i<5;i++)for(let j=0;j<3;j++){let x=55+i*60,y=35+j*40;s+=`<path d="M${x} ${y} L${x+60} ${y+((i+j)%2?40:-40)}" stroke="#9bb49b"/><circle cx="${x}" cy="${y}" r="5" fill="#427b63"/>`}
+}
+else{
+for(let j=0;j<(kind==="signal"?2:8);j++){
+let d="";for(let x=0;x<=360;x+=3){let y=75;
+if(kind==="signal")y+=Math.sin(x*.065)*Math.exp(-Math.pow((x-180)/65,2))*42+(j===0?Math.sin(x*1.6)*8:0);
+else y=26+j*13+Math.sin(x*.025+j*.5)*17+Math.cos(x*.014)*7;
+d+=`${x===0?'M':'L'}${x},${y} `;
+}s+=`<path d="${d}" fill="none" stroke="${j===1?'#246d5b':'#81a78d'}" stroke-width="${kind==='signal'?1.6:1}" opacity="${kind==='signal'&&j===0?.45:.8}"/>`;
+}}
+return `<svg viewBox="0 0 360 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${s}</svg><span class="project-number">RESEARCH / 0${index+1}</span>`;
+}
+const container=document.getElementById("projects");
+projects.forEach((p,i)=>{
+const card=document.createElement("article");card.className="card";card.dataset.groups=p.group.join(" ");
+card.innerHTML=`<div class="card-visual">${graphic(p.art,i)}</div><div class="cardbody"><div class="category">${p.category}</div><h3>${p.title}</h3><p>${p.text}</p><div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join("")}</div><button class="details">Explore research <span aria-hidden="true">↗</span></button></div>`;
+card.querySelector("button").addEventListener("click",()=>openModal(p.category,p.title,p.detail,p.tags));container.appendChild(card);
+});
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
+document.querySelectorAll(".filter").forEach(x=>{x.classList.toggle("active",x===b);x.setAttribute("aria-pressed",String(x===b))});
+let n=0;document.querySelectorAll(".card").forEach(c=>{c.hidden=b.dataset.filter!=="all"&&!c.dataset.groups.split(" ").includes(b.dataset.filter);if(!c.hidden)n++});
+document.getElementById("count").textContent=`Showing ${n} research areas`;
+}));
+document.getElementById("count").textContent=`Showing ${projects.length} research areas`;
+const modal=document.getElementById("modal");
+function openModal(category,title,text,tags=[]){
+document.getElementById("modalCategory").textContent=category;
+document.getElementById("modalTitle").textContent=title;
+document.getElementById("modalText").textContent=text;
+const holder=document.getElementById("modalTags");holder.replaceChildren();tags.forEach(t=>{const span=document.createElement("span");span.textContent=t;holder.appendChild(span)});
+modal.showModal();
+}
+modal.querySelector(".close").addEventListener("click",()=>modal.close());
+modal.addEventListener("click",e=>{if(e.target===modal){const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close()}});
+document.getElementById("contactButton").addEventListener("click",()=>openModal("Portfolio preview","Let’s add your contact links.","Your preferred email address, LinkedIn profile, and publication links can be added here before the site goes live."));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
